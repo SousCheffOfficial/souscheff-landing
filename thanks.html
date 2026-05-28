@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're in - SousCheff</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">SousCheff</a>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <span class="nav-divider">|</span>
+        <a href="index.html#how">How it works</a>
+        <span class="nav-divider">|</span>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main style="padding-top: var(--space-16); padding-bottom: var(--space-16);">
+    <div class="container-narrow">
+      
+      <!-- Error State -->
+      <div id="error-state" class="hidden" style="padding-block: var(--space-20);">
+        <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Hmm, we couldn't find your spot.</h2>
+        <a href="index.html" class="btn-secondary">Try signing up again</a>
+      </div>
+      
+      <!-- Main Content -->
+      <div id="main-content" class="fade-in">
+        
+        <!-- Eyebrow -->
+        <p class="handwritten-large" style="margin-bottom: var(--space-4);">
+          You're in.
+        </p>
+        
+        <!-- Position Display -->
+        <div class="position-display">
+          <span class="position-hash">#</span>
+          <span class="position-number" id="position">--</span>
+        </div>
+        
+        <!-- Subhead -->
+        <p class="text-muted" style="font-size: var(--text-lg); margin-bottom: var(--space-12);">
+          <span id="spots-skipped">0</span> spots until you skip the line.
+        </p>
+        
+        <!-- Body -->
+        <div style="max-width: 480px; margin-bottom: var(--space-12);">
+          <p style="margin-bottom: var(--space-4); line-height: 1.6;">
+            You're on the list. I'll send one update when SousCheff is ready to use.
+          </p>
+          
+          <p style="margin-bottom: var(--space-4); line-height: 1.6;">
+            Want to move up? Send your link to a friend who also throws out groceries. Every friend who joins moves you up 10 spots. No tricks.
+          </p>
+          
+          <p class="signature">Gabriel</p>
+        </div>
+        
+        <!-- Share Section -->
+        <div class="share-section">
+          <p class="share-heading">Your link</p>
+          
+          <div class="share-url-box">
+            <input 
+              type="text" 
+              id="share-url" 
+              readonly
+              class="share-url-input"
+            >
+          </div>
+          
+          <div class="share-buttons">
+            <button 
+              id="copy-btn"
+              class="btn-secondary"
+            >
+              <i data-lucide="copy" style="width: 16px; height: 16px;"></i>
+              Copy link
+            </button>
+            
+            <a 
+              id="twitter-btn"
+              href="#" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              <i data-lucide="twitter" style="width: 16px; height: 16px;"></i>
+              Share on X
+            </a>
+            
+            <a 
+              id="sms-btn"
+              href="#" 
+              class="btn-secondary"
+            >
+              <i data-lucide="smartphone" style="width: 16px; height: 16px;"></i>
+              Send via SMS
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hidden stats for JS -->
+        <div style="display: none;">
+          <span id="referral-count">0</span>
+          <span id="current-rank">--</span>
+        </div>
+        
+      </div>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer style="padding: var(--space-8) var(--space-6); border-top: 1px solid var(--color-border);">
+    <div class="container-wide">
+      <p class="footer-credit">Built by Gabriel in DeSoto, Texas.</p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/supabase.js"></script>
+  <script src="js/thanks.js"></script>
+  <script>
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+  
+</body>
+</html>

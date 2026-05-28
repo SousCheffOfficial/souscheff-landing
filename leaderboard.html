@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard - SousCheff</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">SousCheff</a>
+      <nav class="header-nav">
+        <a href="index.html">Join the waitlist</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main style="padding-top: var(--space-16); padding-bottom: var(--space-16);">
+    <div class="container">
+      
+      <!-- Hero -->
+      <div class="fade-in" style="margin-bottom: var(--space-12);">
+        <p class="eyebrow-accent" style="margin-bottom: var(--space-4);">
+          The leaderboard
+        </p>
+        <h1 style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">
+          Who's bringing the most friends.
+        </h1>
+        <p class="text-muted" style="font-size: var(--text-base); margin-bottom: var(--space-6);">
+          Top 10 referrers. Updated live.
+        </p>
+        <a href="index.html" class="btn-secondary">
+          Not on the list yet? Get on it
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      
+      <!-- Error State -->
+      <div id="error-state" class="hidden" style="padding-block: var(--space-20);">
+        <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Couldn't load leaderboard</h2>
+        <p class="text-muted">Please try again later or refresh the page.</p>
+      </div>
+      
+      <!-- Leaderboard Content -->
+      <div id="leaderboard-content" class="fade-in">
+        
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden" style="padding-block: var(--space-16);">
+          <h2 style="font-size: var(--text-lg); margin-bottom: var(--space-3);">No referrals yet.</h2>
+          <p class="text-muted" style="font-size: var(--text-sm); margin-bottom: var(--space-8);">Be the first. Share your link and you'll show up here.</p>
+          <a href="index.html" class="btn-secondary">
+            Get on the list
+            <span class="arrow">→</span>
+          </a>
+        </div>
+        
+        <!-- Leaderboard List -->
+        <div id="leaderboard-table">
+          <div class="leaderboard-list" id="leaderboard-body">
+            <!-- Rows will be populated by JavaScript -->
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer style="padding: var(--space-8) var(--space-6); border-top: 1px solid var(--color-border); margin-top: var(--space-16);">
+    <div class="container">
+      <p class="text-faint" style="font-size: var(--text-xs);">
+        Updated live &middot; pulled from Supabase
+      </p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/supabase.js"></script>
+  <script src="js/leaderboard.js"></script>
+  
+</body>
+</html>

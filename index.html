@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SousCheff - Stop watching your fruit die</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">SousCheff</a>
+      <nav class="navbar-links">
+        <a href="#how">How it works</a>
+        <span class="navbar-separator">|</span>
+        <a href="leaderboard.html">Leaderboard</a>
+        <span class="navbar-separator">|</span>
+        <a href="#waitlist-footer">Join the waitlist</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      
+      <!-- Eyebrow -->
+      <p class="hero-eyebrow">
+        A small project &middot; DeSoto, TX
+      </p>
+      
+      <!-- Headline -->
+      <h1 class="hero-title">
+        The average family throws out $1,500 of food a year.
+      </h1>
+      
+      <!-- Subheadline -->
+      <p class="hero-subtitle">
+        SousCheff is the pantry tracker that helps you eat what you bought before it goes bad.
+      </p>
+      
+      <!-- Signup Form - IDs PRESERVED -->
+      <form id="signup-form" class="email-form">
+        <label for="email" class="sr-only">Email address</label>
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Your email address"
+          required
+          aria-label="Email address"
+        >
+        <button 
+          type="submit" 
+          id="submit-btn"
+          class="btn-primary"
+        >
+          Join the waitlist
+        </button>
+      </form>
+      
+      <!-- Error Message - ID PRESERVED -->
+      <div id="error-message" class="hidden error-text"></div>
+      
+      <!-- Trust text -->
+      <p class="trust-text">
+        No spam. One email when SousCheff is ready.
+      </p>
+      
+    </div>
+  </section>
+  
+  <!-- How It Works -->
+  <section class="section" id="how">
+    <div class="section-inner">
+      <p class="section-label">How it works</p>
+      
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Snap</h3>
+            <p class="step-text">Take one photo of your fridge. Just open the app and snap. You don't need to organize anything.</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3 class="step-title">See</h3>
+            <p class="step-text">SousCheff reads what's in there. It picks up labels, expiration dates, and what's already starting to wilt.</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Eat</h3>
+            <p class="step-text">You get a heads-up before things die. A small notification: "your strawberries have 2 days left." Eat them before you forget.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- From the Maker -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">From the maker</p>
+      
+      <div class="founder-note">
+        <p>I'm Gabriel. I'm 17, in DeSoto, Texas.</p>
+        
+        <p>My family buys groceries every week and around $1,500 of it ends up in the trash every year. Not because we don't care. Nobody knows what's in the fridge until it's already gone bad. We just couldn't see what we had.</p>
+        
+        <p>SousCheff fixes that. One photo of your fridge tells you what's there, what's about to spoil, and what to eat first. That's it.</p>
+        
+        <p class="founder-signature">Gabriel</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Where Things Stand -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Where things stand</p>
+      
+      <div class="proof-items">
+        <div class="proof-item">
+          <div class="proof-dot"></div>
+          <div class="proof-content">
+            <h3 class="proof-title">Still building.</h3>
+            <p class="proof-text">SousCheff isn't live yet. I'm working on it every day after school. If you have questions or want to talk, email me: <a href="mailto:souscheff.official@gmail.com" class="text-link">souscheff.official@gmail.com</a></p>
+          </div>
+        </div>
+        
+        <div class="proof-item">
+          <div class="proof-dot"></div>
+          <div class="proof-content">
+            <h3 class="proof-title">Building in public.</h3>
+            <p class="proof-text">I'm posting progress updates on Instagram. No roadmap, no timeline promises. Just real updates when there's something to share.</p>
+          </div>
+        </div>
+        
+        <div class="proof-item">
+          <div class="proof-dot"></div>
+          <div class="proof-content">
+            <h3 class="proof-title">You'll know when it's ready.</h3>
+            <p class="proof-text">One email when SousCheff launches. That's it. No spam, no weekly updates, no marketing emails. Just a heads-up when you can actually use it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer CTA -->
+  <section class="footer-cta" id="waitlist-footer">
+    <div class="footer-cta-inner">
+      <h2 class="footer-cta-title">Stop throwing out $1,500 a year.</h2>
+      <p class="footer-cta-text">
+        Join the waitlist. I'll send one email when SousCheff is ready to use.
+      </p>
+      
+      <a href="#signup-form" class="btn-cta">
+        Join the waitlist
+      </a>
+      
+      <p class="footer-cta-note">
+        No spam. One email when it's ready.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-text">Built by Gabriel in DeSoto, Texas.</p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/supabase.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
